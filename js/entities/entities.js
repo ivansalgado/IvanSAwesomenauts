@@ -45,7 +45,75 @@ game.PlayerEntity = me.Entity.extend({
         //delta is the change in time
         this.body.update(delta);
         //updates animations
-        this._super(me.Enitiy, "update", [delta]);
+        this._super(me.Entity, "update", [delta]);
         return true;
+    }
+});
+
+game.PlayerBaseEntity = me.Entity.extend({
+    init: function(x, y, settings) {
+        this._super(me.Entity, 'init', [x, y, {
+                image: "tower",
+                width: 100,
+                height: 100,
+                spritewidth: "100",
+                spriteheight: "100",
+                getShape: function() {
+                    return(new me.Rect(0, 0, 100, 100)).toPolygon();
+                }
+            }]);
+        this.broken = false;
+        this.health = 10;
+        this.alwaysUpdate = true;
+        //if someone runs into the tower, it will be able to collide with it
+        this.body.onCollision = this.onCollision.bind(this);
+        //a type of collision (to identify it when there are multiple collisions)
+        this.type = "PlayerBaseEntity";
+    },
+    update: function() {
+        //if the health is less than or equal to 0, then the player is dead
+        if (this.health <= 0) {
+            this.broken = true;
+        }
+        this.body.update(delta);
+        this._super(me.Entity, "update", [delta]);
+        return true;
+    },
+    onCollision: function() {
+
+    }
+});
+
+game.EnemyBaseEntity = me.Entity.extend({
+    init: function(x, y, settings) {
+        this._super(me.Entity, 'init', [x, y, {
+                image: "tower",
+                width: 100,
+                height: 100,
+                spritewidth: "100",
+                spriteheight: "100",
+                getShape: function() {
+                    return(new me.Rect(0, 0, 100, 100)).toPolygon();
+                }
+            }]);
+        this.broken = false;
+        this.health = 10;
+        this.alwaysUpdate = true;
+        //if someone runs into the tower, it will be able to collide with it
+        this.body.onCollision = this.onCollision.bind(this);
+        //a type of collision (to identify it when there are multiple collisions)
+        this.type = "EnemyBaseEntity";
+    },
+    update: function() {
+        //if the health is less than or equal to 0, then the player is dead
+        if (this.health <= 0) {
+            this.broken = true;
+        }
+        this.body.update(delta);
+        this._super(me.Entity, "update", [delta]);
+        return true;
+    },
+    onCollision: function() {
+
     }
 });
