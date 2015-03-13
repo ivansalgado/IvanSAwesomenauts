@@ -13,12 +13,17 @@ game.PlayerEntity = me.Entity.extend({
 
         //moving 5 units right
         this.body.setVelocity(5, 20);
+        //screen follows the player
+        me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
         //standing
         this.renderable.addAnimation("idle", [78]);
         //setting walking animation
         this.renderable.addAnimation("walk", [117, 118, 119, 120, 121, 122, 123, 124, 125], 80);
         //player stands when game starts
         this.renderable.setCurrentAnimation("idle");
+        //attacking
+        this.renderable.addAnimation("attack", [], 80);
+        
     },
     update: function(delta) {
         //checks whether right key is pressed
@@ -62,18 +67,28 @@ game.PlayerBaseEntity = me.Entity.extend({
                     return(new me.Rect(0, 0, 100, 100)).toPolygon();
                 }
             }]);
+        //does not start as a broken tower
         this.broken = false;
+        //has ten lives
         this.health = 10;
+        //always updates the health
         this.alwaysUpdate = true;
         //if someone runs into the tower, it will be able to collide with it
         this.body.onCollision = this.onCollision.bind(this);
         //a type of collision (to identify it when there are multiple collisions)
         this.type = "PlayerBaseEntity";
+        //adding the normal tower as the base
+        this.renderable.addAnimation("idle", [0]);
+        //adding the broken tower as the base
+        this.renderable.addAnimation("broken", [1]);
+        //the tower begins as a normal (not broken) tower
+        this.renderable.setCurrentAnimation("idle");
     },
-    update: function() {
+    update: function(delta) {
         //if the health is less than or equal to 0, then the player is dead
         if (this.health <= 0) {
             this.broken = true;
+            this.renderable.setCurrentAnimation("broken");
         }
         this.body.update(delta);
         this._super(me.Entity, "update", [delta]);
@@ -103,15 +118,22 @@ game.EnemyBaseEntity = me.Entity.extend({
         this.body.onCollision = this.onCollision.bind(this);
         //a type of collision (to identify it when there are multiple collisions)
         this.type = "EnemyBaseEntity";
+        //adding the normal tower as the base
+        this.renderable.addAnimation("idle", [0]);
+        //adding the broken tower as the base
+        this.renderable.addAnimation("broken", [1]);
+        //the tower begins as a normal (not broken) tower
+        this.renderable.setCurrentAnimation("idle");
     },
-    update: function() {
-        //if the health is less than or equal to 0, then the player is dead
-        if (this.health <= 0) {
-            this.broken = true;
-        }
-        this.body.update(delta);
-        this._super(me.Entity, "update", [delta]);
-        return true;
+    update: function(delta) {
+//        //if the health is less than or equal to 0, then the player is dead
+//        if (this.health <= 0) {
+//            this.broken = true;
+//            this.renderable.setCurrentAnimation("broken");
+//        }
+//        this.body.update(delta);
+//        this._super(me.Entity, "update", [delta]);
+//        return true;
     },
     onCollision: function() {
 
