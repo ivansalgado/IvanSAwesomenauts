@@ -15,8 +15,10 @@ game.PlayScreen = me.ScreenObject.extend({
                 me.input.bindKey(me.input.KEY.RIGHT, "right");
                 //goes left when left key is pressed
                 me.input.bindKey(me.input.KEY.LEFT, "left");
+                //goes left when left key is pressed
+                me.input.bindKey(me.input.KEY.S, "jump");
                 //attecks when spacebar is pressed
-                me.input.bindKey(me.input.KEY.SPACEBAR, "attack");
+                me.input.bindKey(me.input.KEY.A, "attack");
 
 		// add our HUD to the game world
 		this.HUD = new game.HUD.Container();
