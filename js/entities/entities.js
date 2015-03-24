@@ -17,7 +17,7 @@ game.PlayerEntity = me.Entity.extend({
         this.facing = "right";                                 //         6:33
         //keeps track pf time
         this.now = new Date().getTime();
-        this.lastHit = this.now();
+        this.lastHit = this.now;
         this.lastAttack = new Date().getTime();
         //screen follows the player
         me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
@@ -94,8 +94,6 @@ game.PlayerEntity = me.Entity.extend({
         if (response.b.type === 'EnemyBaseEntity') {
             var ydif = this.pos.y - response.b.pos.y;
             var xdif = this.pos.x - response.b.pos.x;
-
-            console.log("xdif" + xdif + "ydif" + ydif);
             
             if(ydif<-40 && xdif< 70 && xdif> 35){
                 this.body.falling = false;
@@ -110,8 +108,9 @@ game.PlayerEntity = me.Entity.extend({
                 this.body.vel.x = 0;
                 this.pos.x = this.pos.x + 1;
             }
-            if(this.renderable.isCurrentAnimation("atttack")){
-                reponse.b.loseHealth
+            if(this.renderable.isCurrentAnimation("attack") && this.now-this.lastHit >= 1000){
+                this.lastHit = this.now;
+                response.b.loseHealth();
             }
         }
     }
@@ -126,8 +125,7 @@ game.PlayerBaseEntity = me.Entity.extend({
                 spritewidth: "100",
                 spriteheight: "100",
                 getShape: function() {
-                    return(new me.Rect(0, 0, 100, 70
-                            )).toPolygon();
+                    return(new me.Rect(0, 0, 100, 70)).toPolygon();
                 }
             }]);
         //does not start as a broken tower
@@ -201,7 +199,13 @@ game.EnemyBaseEntity = me.Entity.extend({
     onCollision: function() {
 
     },
-    loseHeath: function(){
+    loseHealth: function(){
         this.health--;
+    }
+});
+
+game.EnemyCreep = me.Entity.extend({
+    init: function(x, y, settings) {
+        this._super(me.)
     }
 });
