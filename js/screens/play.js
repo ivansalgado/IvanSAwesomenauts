@@ -11,13 +11,16 @@ game.PlayScreen = me.ScreenObject.extend({
                 
                 var player = me.pool.pull("player", 0, 240, {});
                 me.game.world.addChild(player, 5);
+                
+                var gamemanager = me.pool.pull("GameManager", 0, 0, {});
+                me.game.world.addChild(gamemanager, 0);
                 //goes right when right key is pressed
                 me.input.bindKey(me.input.KEY.RIGHT, "right");
                 //goes left when left key is pressed
                 me.input.bindKey(me.input.KEY.LEFT, "left");
-                //goes left when left key is pressed
+                //jumos when S key is pressed
                 me.input.bindKey(me.input.KEY.S, "jump");
-                //attecks when spacebar is pressed
+                //attecks when A key is pressed
                 me.input.bindKey(me.input.KEY.A, "attack");
 
 		// add our HUD to the game world
