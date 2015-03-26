@@ -5,14 +5,26 @@ var game = {
 	// an object where to store game information
 	data : {
 		// score
-		score : 0
+		score : 0,
+                enemyBaseeHealth: 10,
+                playerBaseHealth: 10,
+                enemyCreepHealth: 10,
+                playerHealth: 10,
+                enemyCreepAttack: 1,
+                playerAttack: 1,
+                playerAttackTimer: 1000,
+                enemyCreepAttackTimer: 1000,
+                playerMoveSpeed: 5,
+                creepMoveSpeed: 5,
+                gameManager: "",
+                player: ""
 	},
 	
 	
 	// Run on page load.
 	"onload" : function () {
 	// Initialize the video.
-	if (!me.video.init("screen",  me.video.CANVAS, 1067, 600, true, '1.0')) {
+	if (!me.video.init("screen",  me.video.CANVAS, 1366, 300, true, '1.0')) {
 		alert("Your browser does not support HTML5 canvas.");
 		return;
 	}

@@ -19,9 +19,9 @@ game.PlayScreen = me.ScreenObject.extend({
                 //goes left when left key is pressed
                 me.input.bindKey(me.input.KEY.LEFT, "left");
                 //jumos when S key is pressed
-                me.input.bindKey(me.input.KEY.S, "jump");
+                me.input.bindKey(me.input.KEY.UP, "jump");
                 //attecks when A key is pressed
-                me.input.bindKey(me.input.KEY.A, "attack");
+                me.input.bindKey(me.input.KEY.DOWN, "attack");
 
 		// add our HUD to the game world
 		this.HUD = new game.HUD.Container();
