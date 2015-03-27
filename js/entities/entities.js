@@ -33,6 +33,9 @@ game.PlayerEntity = me.Entity.extend({
     },
     update: function(delta) {
         this.now = new Date().getTime();
+        if (this.health <= 0){
+            this.dead = true;
+        }
         //checks whether right key is pressed
         if (me.input.isKeyPressed("right")) {
             //adds to the position of x by the velocity in setVelocity()
@@ -103,11 +106,11 @@ game.PlayerEntity = me.Entity.extend({
 
             else if (xdif > -35 && this.facing === 'right' && (xdif < 0) && ydif > -50) {
                 this.body.vel.x = 0;
-                this.pos.x = this.pos.x - 1;
+             //   this.pos.x = this.pos.x - 1;
             }
             else if (xdif < 70 && this.facing === 'left' && (xdif > 0)) {
                 this.body.vel.x = 0;
-                this.pos.x = this.pos.x + 1;
+             //   this.pos.x = this.pos.x + 1;
             }
             if (this.renderable.isCurrentAnimation("attack") && this.now - this.lastHit >= game.data.playerAttackTimer) {
                 this.lastHit = this.now;
@@ -119,12 +122,12 @@ game.PlayerEntity = me.Entity.extend({
             
             //keeps the player from walking through the enemy
             if(xdif>0){
-                this.pos.x = this.pos.x + 1;
+           //     this.pos.x = this.pos.x + 1;
                 if(this.facing==="left"){
                     this.body.vel.x = 0;
                 }
             }else{
-                this.pos.x = this.pos.x -1;
+            //    this.pos.x = this.pos.x -1;
                 if(this.facing==="right"){
                     this.body.vel.x = 0;
                 }
@@ -324,6 +327,11 @@ game.GameManager = Object.extend({
     },
     update: function() {
         this.now = new Date().getTime();
+        
+        if (game.data.player.dead) {
+            me.game.world.removeChild(game.data.player);
+            me.state.current().resetPlayer(10, 0);
+        }
 
         if (Math.round(this.now / 1000) % 10 === 0 && (this.now - this.lastCreep >= 1000)) {
             this.lastCreep = this.now;
