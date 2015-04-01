@@ -11,7 +11,7 @@ game.TitleScreen = me.ScreenObject.extend({
                         this.font = new me.Font("Century Gothic", 25, "white");
                     },
                     draw: function(renderer){
-                        this.font.draw(renderer.getContext(), "AWESOMENAUTS", 570, 125);
+                        this.font.draw(renderer.getContext(), "AWESOMENAUTS", 580, 125);
                         this.font.draw(renderer.getContext(), "Press ENTER to play", 250, 530);
                     }
                 })));
