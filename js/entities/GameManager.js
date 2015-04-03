@@ -13,6 +13,7 @@ game.GameManager = Object.extend({
             me.state.current().resetPlayer(10, 0);
         }
         
+        //checks whether it's been 10 seconds since the last creep has been spawned
         if (Math.round(this.now / 1000) % 20 === 0 && (this.now - this.lastCreep >= 1000)) {
             game.data.gold += 1;
             
