@@ -28,6 +28,7 @@ game.EnemyBaseEntity = me.Entity.extend({
 //        //if the health is less than or equal to 0, then the player is dead
         if (this.health <= 0) {
             this.broken = true;
+            game.data.win = true;
             this.renderable.setCurrentAnimation("broken");
         }
         this.body.update(delta);
