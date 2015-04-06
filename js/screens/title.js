@@ -8,13 +8,12 @@ game.TitleScreen = me.ScreenObject.extend({
                 me.game.world.addChild(new (me.Renderable.extend({
                     init: function(){
                         this._super(me.Renderable, 'init', [270, 240, 300, 50]);
-                        this.font = new me.Font("Century Gothic", 25, "white");
+                        this.font = new me.Font("Century Gothic", 18, "white");
                         //listens to see if you're clicking within the dimensions above
                         me.input.registerPointerEvent('pointerdown', this, this.newGame.bind(this), true);
                     },
                     draw: function(renderer){
-                        this.font.draw(renderer.getContext(), "AWESOMENAUTS", 580, 125);
-                        this.font.draw(renderer.getContext(), "start a new game", this.pos.x, this.pos.y);
+                        this.font.draw(renderer.getContext(), "START A NEW GAME", this.pos.x, this.pos.y);
                     },
                     
                     update: function(dt){
@@ -40,8 +39,7 @@ game.TitleScreen = me.ScreenObject.extend({
                         me.input.registerPointerEvent('pointerdown', this, this.newGame.bind(this), true);
                     },
                     draw: function(renderer){
-                        this.font.draw(renderer.getContext(), "AWESOMENAUTS", 580, 125);
-                        this.font.draw(renderer.getContext(), "continue", this.pos.x, this.pos.y);
+                        this.font.draw(renderer.getContext(), "CONTINUE", this.pos.x, this.pos.y);
                     },
                     
                     update: function(dt){
