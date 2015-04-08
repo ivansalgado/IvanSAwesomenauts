@@ -24,6 +24,7 @@ game.EnemyBaseEntity = me.Entity.extend({
         //the tower begins as a normal (not broken) tower
         this.renderable.setCurrentAnimation("idle");
     },
+    
     update: function(delta) {
 //        //if the health is less than or equal to 0, then the player is dead
         if (this.health <= 0) {

@@ -7,7 +7,7 @@ game.TitleScreen = me.ScreenObject.extend({
                 
                 me.game.world.addChild(new (me.Renderable.extend({
                     init: function(){
-                        this._super(me.Renderable, 'init', [270, 240, 300, 50]);
+                        this._super(me.Renderable, 'init', [170, 40, 300, 50]);
                         this.font = new me.Font("Century Gothic", 18, "white");
                         //listens to see if you're clicking within the dimensions above
                         me.input.registerPointerEvent('pointerdown', this, this.newGame.bind(this), true);
@@ -21,6 +21,7 @@ game.TitleScreen = me.ScreenObject.extend({
                     },
                     
                     newGame: function(){
+                        console.log("new1");
                         me.input.releasePointerEvent('pointerdown', this);
                         me.save.remove('exp');
                         me.save.remove('exp1');
@@ -33,7 +34,7 @@ game.TitleScreen = me.ScreenObject.extend({
                 
                 me.game.world.addChild(new (me.Renderable.extend({
                     init: function(){
-                        this._super(me.Renderable, 'init', [380, 340, 250, 50]);
+                        this._super(me.Renderable, 'init', [600, 140, 250, 50]);
                         this.font = new me.Font("Century Gothic", 18, "white");
                         //listens to see if you're clicking within the dimensions above
                         me.input.registerPointerEvent('pointerdown', this, this.newGame.bind(this), true);
@@ -47,6 +48,7 @@ game.TitleScreen = me.ScreenObject.extend({
                     },
                     
                     newGame: function(){
+                        console.log("new2");
                         me.input.releasePointerEvent('pointerdown', this);
                         me.state.change(me.state.PLAY);
                     }
