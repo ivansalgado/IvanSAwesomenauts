@@ -16,7 +16,7 @@ game.TitleScreen = me.ScreenObject.extend({
                         this.font.draw(renderer.getContext(), "START A NEW GAME", this.pos.x, this.pos.y);
                     },
                     
-                    update: function(dt){
+                    update: function(dt){ //dt=delta
                         return true;
                     },
                     
@@ -48,7 +48,11 @@ game.TitleScreen = me.ScreenObject.extend({
                     },
                     
                     newGame: function(){
-                        console.log("new2");
+                        game.data.exp = me.save.exp;
+                        game.data.exp1 = me.save.exp1;
+                        game.data.exp2 = me.save.exp2;
+                        game.data.exp3 = me.save.exp3;
+                        game.data.exp4 = me.save.exp4;
                         me.input.releasePointerEvent('pointerdown', this);
                         me.state.change(me.state.PLAY);
                     }
