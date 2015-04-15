@@ -13,7 +13,7 @@ game.SpendExp = me.ScreenObject.extend({
                     },
                     
                     draw: function(renderer){
-                        this.font.draw(renderer.getContext(), "SPEND EXP", this.pos.x, this.pos.y);
+                        this.font.draw(renderer.getContext(), "SPEND", this.pos.x, this.pos.y);
                     }
                    
                 })));
