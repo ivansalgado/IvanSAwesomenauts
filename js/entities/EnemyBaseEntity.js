@@ -11,7 +11,7 @@ game.EnemyBaseEntity = me.Entity.extend({
                 }
             }]);
         this.broken = false;
-        this.health = 10;
+        this.health = 1;
         this.alwaysUpdate = true;
         //if someone runs into the tower, it will be able to collide with it
         this.body.onCollision = this.onCollision.bind(this);

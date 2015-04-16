@@ -48,11 +48,11 @@ init: function(x, y, settings) {
     
         addAnimation: function(){
         //standing
-        this.renderable.addAnimation("idle", [78]);
+        this.renderable.addAnimation("idle", [130]);
                 //setting walking animation
                 this.renderable.addAnimation("walk", [117, 118, 119, 120, 121, 122, 123, 124, 125], 80);
                 //attacking
-                this.renderable.addAnimation("attack", [65, 66, 67, 68, 69, 70, 71, 72], 80);
+                this.renderable.addAnimation("attack", [169, 170, 171, 172, 173, 174], 80);
         },
 
 update: function(delta) {

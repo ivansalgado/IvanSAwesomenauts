@@ -18,9 +18,9 @@ body {
 }
 
 #screen canvas {
-        padding-top: 190px;
+        margin-top: 190px;
             
-	margin: auto;
+	/*margin: auto;*/
 
 	/* Hide the gap for font descenders. */
 	display: block;
