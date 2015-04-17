@@ -10,14 +10,14 @@ game.GameTimerManager = Object.extend({
         this.now = new Date().getTime();
         this.goldTimerCheck();
         this.creepTimerCheck();
-    
+        
         return true;
     },
     
     goldTimerCheck: function(){
         //checks whether it's been 10 seconds since the last creep has been spawned
         if (Math.round(this.now / 1000) % 20 === 0 && (this.now - this.lastCreep >= 1000)) {
-            game.data.gold += 1;
+            game.data.gold += (game.data.exp1+1);
             console.log("Current gold: " + game.data.gold);       
         }
     },
@@ -74,4 +74,33 @@ game.ExperienceManager = Object.extend({
     }
     
     
+});
+
+game.SpendGold = Object.extend({
+   init: function(x, y, settings){
+     this.now = new Date().getTime();
+     this.lastBuy = new Date().getTime();
+     this.paused = false;
+     this.alwaysUpdate = true;
+     this.updateWhenPaused = true;
+     this.buying = false;
+   },
+   
+   update: function(){
+       this.now = new Date().getTime();
+       if(me.input.isKeyPressed("buy") && this.now-this.lastBuy >= 1000){
+           this.lastBuy = this.now;
+           if(!this.buying){
+               this.startBuying();
+           }else{
+               
+           }
+       }
+       
+       return true;
+   },
+   
+   startBuying: function(){
+       
+   }
 });

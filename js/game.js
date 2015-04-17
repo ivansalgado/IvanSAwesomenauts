@@ -7,7 +7,7 @@ var game = {
 		// score
 		score : 0,
                 enemyBaseHealth: 1,
-                playerBaseHealth: 1000000000000000000000000000000000000000000000,
+                playerBaseHealth: 1,
                 enemyCreepHealth: 1,
                 playerHealth: 100,
                 enemyCreepAttack: 1,
@@ -25,7 +25,9 @@ var game = {
                 exp2: 0,
                 exp3: 0,
                 exp4: 0,
-                win: ""
+                win: "",
+                pausePos: "",
+                buyscreen: ""
 	},
 	
 	
@@ -74,7 +76,9 @@ var game = {
                 me.pool.register("GameTimerManager", game.GameTimerManager);
                 me.pool.register("HeroDeathManager", game.HeroDeathManager);
                 me.pool.register("ExperienceManager", game.ExperienceManager);
-            
+                me.pool.register("SpendGold", game.SpendGold)
+                
+                
                 //MENU and PLAY are established variables from melonJS
 		me.state.set(me.state.MENU, new game.TitleScreen());
 		me.state.set(me.state.PLAY, new game.PlayScreen());
