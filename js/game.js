@@ -83,7 +83,7 @@ var game = {
                 me.pool.register("GameTimerManager", game.GameTimerManager);
                 me.pool.register("HeroDeathManager", game.HeroDeathManager);
                 me.pool.register("ExperienceManager", game.ExperienceManager);
-                me.pool.register("SpendGold", game.SpendGold)
+                me.pool.register("SpendGold", game.SpendGold);
                 
                 
                 //MENU and PLAY are established variables from melonJS

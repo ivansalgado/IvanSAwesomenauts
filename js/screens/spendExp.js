@@ -15,7 +15,7 @@ game.SpendExp = me.ScreenObject.extend({
                 me.game.world.addChild(new (me.Renderable.extend({
                     init: function(){
                         this._super(me.Renderable, 'init', [540, 40, 300, 50]);
-                        this.font = new me.Font("Century Gothic", 18, "#e0e0e0");
+                        this.font = new me.Font("Century Gothic", 18, "white");
                     },
                     
                     draw: function(renderer){
