@@ -15,11 +15,11 @@ game.NewProfile = me.ScreenObject.extend({
                 me.game.world.addChild(new (me.Renderable.extend({
                     init: function(){
                         this._super(me.Renderable, 'init', [540, 40, 300, 50]);
-                        this.font = new me.Font("Century Gothic", 18, "white");
+                        this.font = new me.Font("Century Gothic", 18, "#757575");
                     },
                     
                     draw: function(renderer){
-                        this.font.draw(renderer.getContext(), "CREATE USERNAME&PASSWORD ", this.pos.x, this.pos.y);
+                        this.font.draw(renderer.getContext(), "CREATE  USERNAME&PASSWORD ", this.pos.x, this.pos.y);
                     }
                    
                 })));
