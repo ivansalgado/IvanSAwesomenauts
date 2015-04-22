@@ -1,0 +1,146 @@
+
+div{
+    border-style: solid;
+    border-width: 0px;
+    border-color: #bdbdbd;
+    padding: 15px;
+}
+
+a{
+    font-family: 'Carme', sans-serif;
+    color: #212121;
+}
+
+h1{
+    font-size:130px;
+    padding-top: 25px;
+    font-family: 'Raleway', sans-serif;
+}
+
+#greet{
+    color: #212121;
+}
+
+h2{
+    font-size:22px;
+    color: white;
+    font-family: 'Carme', sans-serif; 
+}
+
+h3{
+    color: black;
+    font-size: 30px;
+    margin-left: 335px; 
+    font-family: 'Carme', sans-serif;
+}
+
+h4{
+    color: black;
+    font-size: 30px;
+    margin-left: 430px; 
+    font-family: 'Carme', sans-serif;
+}
+
+h6{
+    font-size: 60px;
+    font-family: 'Carme', sans-serif;
+    padding-bottom: 50px;
+    color: #757575;
+}
+
+body{
+    padding-left: 100px;
+    padding-right: 100px;
+    background-image: url(../images/gray.jpg);
+        
+}
+
+p{
+    font-family: 'Carme', sans-serif;
+    font-size: 21px;
+}
+
+
+.btn-group{
+    padding: 7px;
+}
+
+.navbar-header{
+    color: #FF9800;
+}
+
+#current-link{
+    background-color: #bdbdbd;
+    color: white;
+}
+
+#html{
+    color: black;
+    background-color: #8892BF;
+    font-family: 'Carme', sans-serif;
+}
+#html:hover{
+    color: white;
+    background-color: #8892BF;
+    font-family: 'Carme', sans-serif;
+}
+
+#clickButton{
+    text-shadow: 5px;
+}
+
+
+#i{
+    font-family: 'Raleway', sans-serif;
+    font-size: 75px;
+    color: #757575;
+    padding-bottom: 50px;
+}
+
+#v{
+    color: #FF9800;
+    font-family: 'Poiret One', cursive;
+}
+#v:hover{
+    text-decoration: none;
+}
+
+label{
+    color: #757575;
+}
+
+article{
+    font-size: 200px;
+}
+
+.jumbotron{
+    size: 100px;
+}
+
+.col-xs-4{
+    margin-left: 400px; 
+    margin-right: 400px;
+}
+
+#b{
+    color: #FF9800;
+    font-family: 'Poiret One', cursive;
+    margin-left: 335px; 
+}
+
+#c{
+    color: #FF9800;
+    font-family: 'Poiret One', cursive;
+    margin-left: 275px; 
+}
+
+#1{
+    margin-left: 400px; 
+    margin-right: 400px;
+}
+
+h5{
+    color: #FF9800;
+    font-size: 30px;
+    font-family: 'Carme', sans-serif;
+}
