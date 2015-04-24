@@ -3,12 +3,12 @@
     session_start();
     session_regenerate_id(true);
     
-    $path = "/salgadoi-blog/";
+    $path = '/IvanSAawesomnauts/php/';
     
     $host = "localhost";
     $username  = "root";
     $password  = "root";
-    $database = "blog_db";
+    $database = "awesomenauts_db";
     
     if(!isset($_SESSION["connection"])){
         $connection = new Database($host, $username, $password, $database);

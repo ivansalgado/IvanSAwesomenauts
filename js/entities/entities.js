@@ -114,7 +114,7 @@ update: function(delta) {
     
         jump: function(){
         this.body.jumping = true;
-                this.body.vel.y -= this.body.accel.y * me.timer.tick;
+        this.body.vel.y -= this.body.accel.y * me.timer.tick;
         },
     
         setAnimation: function(){
