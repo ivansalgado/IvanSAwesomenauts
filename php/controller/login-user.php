@@ -38,9 +38,9 @@
              
         }
         else{
-            echo "<p>Invalid username or password1</p>";
+            echo "Invalid username and password";
         }
     }
     else{
-            echo "<p>Invalid username or password2</p>";
+            echo "Invalid username and password";
     }

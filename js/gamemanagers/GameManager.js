@@ -7,8 +7,10 @@ game.ExperienceManager = Object.extend({
     update: function(){
         if(game.data.win === true && !this.gameover){
             this.gameOver(true);
+            alert("YOU'VE WON");
         }else if(game.data.win === false && !this.gameover){
             this.gameOver(false);
+            alert("GAME OVER");
         }
         return true;
     },
@@ -22,6 +24,33 @@ game.ExperienceManager = Object.extend({
         
         this.gameover = true;
         me.save.exp = game.data.exp;
+        
+        
+        //when you click on the button, it passes the information to create-user file
+        $.ajax({
+            type: "POST",
+            url: "php/controller/save-user.php",
+            data: {
+                exp: game.data.exp,
+                exp1: game.data.exp1,
+                exp2: game.data.exp2,
+                exp3: game.data.exp3,
+                exp4: game.data.exp4,
+                
+            },
+            dataType: "text"
+        })
+                .success(function(response) {
+                    if (response === "true") {
+                        me.state.change(me.state.MENU);
+                    } else {
+                        alert(response);
+                    }
+                })
+                .fail(function(response) {
+                    alert("Fail");
+                });
+                    
        
     }
     
