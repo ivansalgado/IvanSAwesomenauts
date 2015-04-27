@@ -6,6 +6,8 @@ var game = {
 	data : {
 		// score
 		score : 0,
+                option1 : "",
+                option2 : "",
                 enemyBaseHealth: 1,
                 playerBaseHealth: 1,
                 enemyCreepHealth: 1,
@@ -18,6 +20,7 @@ var game = {
                 creepMoveSpeed: 5,
                 gameTimerManager: "",
                 heroDeathManager: "",
+                spearTimer: 15,
                 player: "",
                 exp: 0,
                 gold: 0,
@@ -86,6 +89,7 @@ var game = {
                 me.pool.register("HeroDeathManager", game.HeroDeathManager);
                 me.pool.register("ExperienceManager", game.ExperienceManager);
                 me.pool.register("SpendGold", game.SpendGold);
+                me.pool.register("spear", game.SpearThrow);
                 
                 
                 //MENU and PLAY are established variables from melonJS
