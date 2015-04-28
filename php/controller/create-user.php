@@ -26,7 +26,6 @@
     if($query){
         //need this for ajax on index.php
         echo "true";
-        header("Location: " . $path . "/../index.php");
     }
     
     //tells whether there was an error in creating a new user

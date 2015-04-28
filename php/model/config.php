@@ -3,7 +3,7 @@
     session_start();
     session_regenerate_id(true);
     
-    $path = '/IvanSAawesomnauts/php/';
+    $path = '/IvanSAwesomenauts/php/';
     
     $host = "localhost";
     $username  = "root";

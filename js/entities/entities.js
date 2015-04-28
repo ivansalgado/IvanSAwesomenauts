@@ -130,9 +130,9 @@ update: function(delta) {
         },
         
         throwSpear: function(){
-            if(this.lastSpear >= game.data.spearTimer && game.data.ability3 >= 0){
+            if((this.now-this.lastSpear) >= game.data.spearTimer*1000 && game.data.ability3 > 0){
             this.lastSpear = this.now;
-            var spear = me.pool.pull("spear", this.pos.x, this.pos.y, 0, {});
+            var spear = me.pool.pull("spear", this.pos.x, this.pos.y, 0, {}, this.facing);
             me.game.world.addChild(spear, 10);
         }
         },
