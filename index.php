@@ -16,25 +16,29 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Raleway:600' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Carme' rel='stylesheet' type='text/css'>
+        <link type='text/css' rel='stylesheet' href='css/bootstrap-theme.css'>
+        <link type='text/css' rel='stylesheet' href='css/bootstrap.css'>
 	</head>
 	<body>
 		<!-- Canvas placeholder -->
 		<div id="screen"></div>
 
-                <form id="input" methodd="post">
+                <form id="input" method="post">
                     <div class="field">
-                        <label for="username">Username</label>
+                        <label for="username">USERNAME</label>
                         <input type='text' name='username' id='username' autocomplete="off">
                         
                     </div>
                     <div class='password'>
-                        <label for="password">Password</label>
+                        <label for="password">PASSWORD</label>
                         <input type='password' name='password' id='password' autocomplete='off'>
                     </div>
                     
-                    <button type='button' id="register">Register</button>
-                    <button type='button' id='load'>Load</button>
-                    <button type='button' id='mainmenu'>Main Menu</button>
+                    <button type='button' class="btn btn-default" id="register">REGISTER</button>
+                    <button type='button' class="btn btn-default" id='load'>LOAD</button>
+                    <button type='button' class="btn btn-default" id='mainmenu'>MAIN MENU</button>
                 </form>
 		<!-- melonJS Library -->
 		<!-- build:js js/app.min.js -->

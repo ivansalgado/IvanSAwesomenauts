@@ -7,6 +7,10 @@ game.resources = [
         
         {name: "background-tiles", type:"image", src: "data/img/background-tiles.png"},
         {name: "meta-tiles", type:"image", src: "data/img/meta-tiles.png"},
+        {name: "newtile", type:"image", src: "data/img/newtile.png"},
+        {name: "newertile", type:"image", src: "data/img/newertile.png"},
+        {name: "slant-grey", type:"image", src: "data/img/slant-grey.png"},
+        {name: "slant-white", type:"image", src: "data/img/slant-white.png"},
         {name: "player", type:"image", src: "data/img/GR.png"},
         {name: "tower", type:"image", src: "data/img/tower_round.svg.png"},
         {name: "creep1", type:"image", src: "data/img/brainmonster.png"},

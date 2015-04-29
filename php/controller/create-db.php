@@ -6,7 +6,6 @@
     $query = $_SESSION["connection"]->query("CREATE TABLE users ("
             . "id int(11) NOT NULL AUTO_INCREMENT,"
             . "username varchar (30) NOT NULL,"
-            . "email varchar (50) NOT NULL,"
             . "password char (158) NOT NULL,"
             . "salt char (128) NOT NULL,"
             . "exp int(4),"

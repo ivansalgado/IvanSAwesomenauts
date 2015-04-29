@@ -1,6 +1,6 @@
 body {
-	background-color: #000;
-	color: #fff;
+	background-color: black;
+	color: black;
 
 	/* Allow mouse dragging. */
 	-moz-user-select: none;
@@ -40,6 +40,7 @@ body {
     display: block;
     text-align: center;
     visibility: hidden;
+    font-family: 'Carme', sans-serif;
 }
 
 #load{
