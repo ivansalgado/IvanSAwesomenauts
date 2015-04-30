@@ -9,6 +9,7 @@ game.resources = [
         {name: "meta-tiles", type:"image", src: "data/img/meta-tiles.png"},
         {name: "newtile", type:"image", src: "data/img/newtile.png"},
         {name: "newertile", type:"image", src: "data/img/newertile.png"},
+        {name: "y-tile", type:"image", src: "data/img/y-tile.png"},
         {name: "slant-grey", type:"image", src: "data/img/slant-grey.png"},
         {name: "slant-white", type:"image", src: "data/img/slant-white.png"},
         {name: "player", type:"image", src: "data/img/GR.png"},
