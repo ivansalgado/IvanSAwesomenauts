@@ -1,5 +1,6 @@
 game.EnemyBaseEntity = me.Entity.extend({
     init: function(x, y, settings) {
+        //dimensions of player base
         this._super(me.Entity, 'init', [x, y, {
                 image: "tower",
                 width: 100,
@@ -26,7 +27,7 @@ game.EnemyBaseEntity = me.Entity.extend({
     },
     
     update: function(delta) {
-//        //if the health is less than or equal to 0, then the player is dead
+        //if the health is less than or equal to 0, then the player is dead
         if (this.health <= 0) {
             this.broken = true;
             game.data.win = true;
@@ -37,9 +38,9 @@ game.EnemyBaseEntity = me.Entity.extend({
         return true;
     },
     onCollision: function() {
-
+    //?
     },
     loseHealth: function() {
-        this.health--;
+        this.health--; 
     }
 });

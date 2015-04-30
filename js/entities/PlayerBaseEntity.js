@@ -1,5 +1,6 @@
 game.PlayerBaseEntity = me.Entity.extend({
     init: function(x, y, settings) {
+        //dimensions of player base
         this._super(me.Entity, 'init', [x, y, {
                 image: "tower",
                 width: 100,
@@ -39,7 +40,7 @@ game.PlayerBaseEntity = me.Entity.extend({
         return true;
     },
     loseHealth: function(damage) {
-        
+        //the base loses health when attacked 
         this.health = this.health - damage;
     },
     onCollision: function() {

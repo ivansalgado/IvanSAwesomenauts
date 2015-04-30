@@ -1,4 +1,5 @@
 game.SpendGold = Object.extend({
+    //settings of this screen
    init: function(x, y, settings){
      this.now = new Date().getTime();
      this.lastBuy = new Date().getTime();
@@ -10,6 +11,7 @@ game.SpendGold = Object.extend({
    
    update: function(){
        this.now = new Date().getTime();
+       //if buy key is pressed, allow player to buy
        if(me.input.isKeyPressed("buy") && this.now-this.lastBuy >= 1000){
            this.lastBuy = this.now;
            if(!this.buying){
@@ -34,6 +36,7 @@ game.SpendGold = Object.extend({
        me.game.world.addChild(game.data.buyscreen, 34);
        game.data.player.body.setVelocity(0, 0);
        me.state.pause(me.state.PLAY);
+       //allow players to use f1-f2 keys
        me.input.bindKey(me.input.KEY.F1, "F1", true);
        me.input.bindKey(me.input.KEY.F2, "F2", true);
        me.input.bindKey(me.input.KEY.F3, "F3", true);
@@ -44,10 +47,14 @@ game.SpendGold = Object.extend({
    },
    
     setBuyText: function() {
+        //text of the buy screen
         game.data.buytext = new (me.Renderable.extend({
             init: function() {
+                //position of text
                 this._super(me.Renderable, 'init', [game.data.pausePos.x, game.data.pausePos.y, 300, 50]);
+                //font and color of text
                 this.font = new me.Font("Century Gothic", 18, "#000000");
+                //update if items are purchased
                 this.updateWhenPaused = true;
                 this.alwaysUpdate = true;
             },

@@ -1,5 +1,7 @@
 game.EnemyCreep = me.Entity.extend({
     init: function(x, y, settings) {
+        
+        //dimensions of the creep
         this._super(me.Entity, 'init', [x, y, {
                 image: "creep1",
                 width: 32,
@@ -25,9 +27,11 @@ game.EnemyCreep = me.Entity.extend({
         this.renderable.setCurrentAnimation("walk");
     },
     loseHealth: function(damage){
+        //creep dies when being attacked
     this.health = this.health - damage;
     },
     update: function(delta) {
+        // if it has no health, then the creep is removed
         if(this.health <= 0){
             me.game.world.removeChild(this);
         }

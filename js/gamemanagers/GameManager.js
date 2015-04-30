@@ -1,15 +1,20 @@
 game.ExperienceManager = Object.extend({
     init: function(x, y, settings){
+        //update if game is running
         this.alwaysUpdate = true;
         this.gameover = false;
     },
     
     update: function(){
+        //if you've successfully attacked the enemy...
         if(game.data.win === true && !this.gameover){
             this.gameOver(true);
+            //...alert the player that he/she won
             alert("YOU'VE WON");
         }else if(game.data.win === false && !this.gameover){
+            //if player's base has no health...
             this.gameOver(false);
+            //...alert the player that he/she has lost
             alert("GAME OVER");
         }
         return true;
@@ -22,6 +27,7 @@ game.ExperienceManager = Object.extend({
             game.data.exp += 1;
         }
         
+        //save the player's progress when the game has ended
         this.gameover = true;
         me.save.exp = game.data.exp;
         

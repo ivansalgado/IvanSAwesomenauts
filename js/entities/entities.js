@@ -14,6 +14,7 @@ init: function(x, y, settings) {
 },
 
         setSuper: function(x, y) {
+            //dimensions of the player
         this._super(me.Entity, 'init', [x, y, {
         image: "player",
                 width: 64,
@@ -162,6 +163,7 @@ update: function(delta) {
         },      
 
 loseHealth: function(damage) {
+    //lose health when being attacked
         this.health = this.health - damage;
         },
 
@@ -233,6 +235,7 @@ collideHandler: function(response) {
         hitCreep: function(response){
             //if the creep's health is less than our attack, execute code in if statement 
                 if (response.b.health <= game.data.playerAttack) {
+                    //gain gold when enemy is killed
                     game.data.gold += 1;
                 }
                 response.b.loseHealth(game.data.playerAttack);
